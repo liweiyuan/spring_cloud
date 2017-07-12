@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ConsumerController {
+
+
     /*@Autowired
     private RestTemplate restTemplate;
 
@@ -21,6 +23,7 @@ public class ConsumerController {
     }*/
 
 
+    //增加断路器的情况下重新访问，可以有效增加访问异常的情况
     @Autowired
     private ComputeService computeService;
 
