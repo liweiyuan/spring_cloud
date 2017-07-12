@@ -1,5 +1,6 @@
 package com.tingyun.service;
 
+import com.tingyun.component.ComputeClientHystrix;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by tingyun on 2017/7/12.
  * 使用@FeignClient("compute-service")注解来绑定该接口对应compute-service服务
  */
-@FeignClient("compute-service")
+@FeignClient(value = "compute-service",fallback = ComputeClientHystrix.class)
 public interface ComputeClient {
 
     @RequestMapping(value = "/add",method = RequestMethod.GET)
