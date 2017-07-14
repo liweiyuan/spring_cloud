@@ -11,7 +11,7 @@ public class SpringCloudServerApplication {
 
 	public static void main(String[] args) {
 
-		//SpringApplication.run(SpringCloudServerApplication.class, args);
+		// SpringApplication.run(SpringCloudServerApplication.class, args);
 		new SpringApplicationBuilder(SpringCloudServerApplication.class).web(true).run(args);
 	}
 }
